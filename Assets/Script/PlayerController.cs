@@ -21,6 +21,10 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //GameControllerからステータスを参照
+        fireDelay = GameController.FireRate;
+        speed = GameController.MoveSpeed;
+
         float horizontal = Input.GetAxis("Horizontal"); //入力 GetAxisは操作設定に設定されているキーの入力を取得する
         float vertical = Input.GetAxis("Vertical");
 
