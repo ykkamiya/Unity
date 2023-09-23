@@ -16,9 +16,9 @@ public class DungeonGenerator : MonoBehaviour
     private void SpawnRooms(IEnumerable<Vector2Int> rooms)
     {
         RoomController.instance.LoadRoom("Start", 0, 0); //[0,0]にstartを生成
-        foreach(Vector2Int roomLocation in rooms) //foreach...与えられた配列データに対して各データでループ実行
+        foreach (Vector2Int roomLocation in rooms) //foreach...与えられた配列データに対して各データでループ実行
         {
-            RoomController.instance.LoadRoom("Empty", roomLocation.x, roomLocation.y); //roomsの座標にemptyルームを生成
+            RoomController.instance.LoadRoom("Empty", roomLocation.x, roomLocation.y); //roomsの座標にemptyルームを生成         
         }
     }
 }

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using System.Linq;
 
 public class RoomInfo
 {
@@ -26,6 +27,8 @@ public class RoomController : MonoBehaviour
     public List<Room> loadedRooms = new List<Room>();
     
     bool isLoadingRoom = false;
+    bool spawnedBossRoom = false;
+    bool updatedRooms = false;
 
     void Awake()
     {
@@ -56,6 +59,18 @@ public class RoomController : MonoBehaviour
 
         if(loadRoomQueue.Count == 0) //生成待ちのマップは無い？
         {
+            if(!spawnedBossRoom)
+            {
+                StartCoroutine(SpawnBossRoom());
+            }
+            else if(!spawnedBossRoom && updatedRooms)
+            {
+                foreach(Room room in loadedRooms)
+                {
+                    room.RemoveUnconnectedDoors();
+                }
+                updatedRooms = true;
+            }
             return;
         }
 
@@ -63,6 +78,21 @@ public class RoomController : MonoBehaviour
         isLoadingRoom = true;
 
         StartCoroutine(LoadRoomRoutine(currentLoadRoomData));
+    }
+
+    IEnumerator SpawnBossRoom()
+    {
+        spawnedBossRoom = true;
+        yield return new WaitForSeconds(0.5f);
+        if(loadRoomQueue.Count == 0)
+        {
+            Room bossRoom = loadedRooms[loadedRooms.Count - 1];
+            Vector2Int tempRoom = new Vector2Int(bossRoom.X, bossRoom.Y);
+            Destroy(bossRoom.gameObject);
+            var roomToRemove = loadedRooms.Single(r => r.X == tempRoom.x && r.Y == tempRoom.y);
+            loadedRooms.Remove(roomToRemove);
+            LoadRoom("End", tempRoom.x, tempRoom.y);
+        }
     }
 
     public void LoadRoom(string name, int x, int y) //部屋を生成する関数
@@ -94,30 +124,43 @@ public class RoomController : MonoBehaviour
 
     public void RegisterRoom( Room room) //部屋を生成する処理？
     {
-        room.transform.position = new Vector3(
-            currentLoadRoomData.X * room.Width,
-            currentLoadRoomData.Y * room.Height,
-            0
-        );
-
-        room.X = currentLoadRoomData.X;
-        room.Y = currentLoadRoomData.Y;
-        room.name = currentWorldName + "-" + currentLoadRoomData.name + " " + room.X + ", " + room.Y;
-        room.transform.parent = transform; //tranform...インスペクターを取得する, parent...親から取得
-
-        isLoadingRoom = false;
-
-        if(loadedRooms.Count == 0)
+        if(!DoesRoomExist(currentLoadRoomData.X, currentLoadRoomData.Y))
         {
-            CameraController.instance.currRoom = room; //生成マップが無い場合、最初に生成されたマップにカメラを合わせる->start
-        }
+            room.transform.position = new Vector3(
+                currentLoadRoomData.X * room.Width,
+                currentLoadRoomData.Y * room.Height,
+                0
+            );
 
-        loadedRooms.Add(room); //生成済みリストに追加
+            room.X = currentLoadRoomData.X;
+            room.Y = currentLoadRoomData.Y;
+            room.name = currentWorldName + "-" + currentLoadRoomData.name + " " + room.X + ", " + room.Y;
+            room.transform.parent = transform; //tranform...インスペクターを取得する, parent...親から取得
+
+            isLoadingRoom = false;
+
+            if(loadedRooms.Count == 0)
+            {
+                CameraController.instance.currRoom = room; //生成マップが無い場合、最初に生成されたマップにカメラを合わせる->start
+            }
+
+            loadedRooms.Add(room); //生成済みリストに追加
+        }
+        else
+        {
+            Destroy(room.gameObject);
+            isLoadingRoom = false;
+        }
     }
     
     public bool DoesRoomExist( int x, int y)
     {
         return loadedRooms.Find( item => item.X == x && item.Y == y) != null;
+    }
+
+    public Room FindRoom( int x, int y)
+    {
+        return loadedRooms.Find( item => item.X == x && item.Y == y);
     }
 
     public void OnPlayerEnterRoom(Room room)

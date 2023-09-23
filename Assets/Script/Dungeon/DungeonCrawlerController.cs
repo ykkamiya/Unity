@@ -21,13 +21,13 @@ public class DungeonCrawlerController : MonoBehaviour //よく分からん,,,マ
         {Direction.right, Vector2Int.right}
     };
 
-    public static List<Vector2Int> GenerateDungeon(DungeonGenerationData dungeonData) //全体マップ生成
+    public static List<Vector2Int> GenerateDungeon(DungeonGenerationData dungeonData) //ダンジョン"座標"生成
     {
         List<DungeonCrawler> dungeonCrawlers = new List<DungeonCrawler>(); //ダンジョン生成ヘッド格納用リスト
 
-        for(int i = 0; i < dungeonData.numberOfCrawlers; i++) //numofcrawler...生成ヘッドの数
+        for(int i = 0; i < dungeonData.numberOfCrawlers; i++)
         {
-            dungeonCrawlers.Add(new DungeonCrawler(Vector2Int.zero)); //ダンジョン生成ヘッドリストに追加
+            dungeonCrawlers.Add(new DungeonCrawler(Vector2Int.zero));
         }
 
         int iterations = Random.Range(dungeonData.iterationMin, dungeonData.iterationMax); //どの距離の長さまで部屋を生成するか指定範囲内でランダム決定
