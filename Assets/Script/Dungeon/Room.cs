@@ -15,13 +15,14 @@ public class Room : MonoBehaviour
     public Room(int x, int y)
     {
         X = x;
-        Y = Y;
+        Y = y;
     }
 
     public Door leftDoor;
     public Door rightDoor;
     public Door topDoor;
     public Door bottomDoor;
+
     public List<Door> doors = new List<Door>();
 
     // Start is called before the first frame update
@@ -66,8 +67,9 @@ public class Room : MonoBehaviour
         }
     }
 
-    public void RemoveUnconnectedDoors() //部屋に接続されてないドアの削除
+    public void RemoveUnconnectedDoors()
     {
+        Debug.Log("removing doors");
         foreach(Door door in doors)
         {
             switch(door.doorType)
@@ -90,46 +92,43 @@ public class Room : MonoBehaviour
                 break;
             }
         }
-        
     }
-    //部屋が存在するか判定する関数
+
     public Room GetRight()
     {
-        if (RoomController.instance.DoesRoomExist(X + 1, Y))
+        if(RoomController.instance.DoesRoomExist(X + 1, Y))
         {
             return RoomController.instance.FindRoom(X + 1, Y);
         }
         return null;
     }
-
     public Room GetLeft()
     {
-        if (RoomController.instance.DoesRoomExist(X - 1, Y))
+        if(RoomController.instance.DoesRoomExist(X - 1, Y))
         {
             return RoomController.instance.FindRoom(X - 1, Y);
         }
         return null;
     }
-
     public Room GetTop()
     {
-        if (RoomController.instance.DoesRoomExist(X, Y + 1))
+        if(RoomController.instance.DoesRoomExist(X, Y + 1))
         {
             return RoomController.instance.FindRoom(X, Y + 1);
         }
         return null;
     }
-
     public Room GetBottom()
     {
-        if (RoomController.instance.DoesRoomExist(X, Y - 1))
+        if(RoomController.instance.DoesRoomExist(X, Y - 1))
         {
             return RoomController.instance.FindRoom(X, Y - 1);
         }
         return null;
     }
 
-    void OnDrawGizmos() //部屋の範囲に赤い枠を描画
+
+    void OnDrawGizmos()
     {
         Gizmos.color = Color.red;
         Gizmos.DrawWireCube(transform.position, new Vector3(Width, Height, 0));
@@ -137,14 +136,14 @@ public class Room : MonoBehaviour
 
     public Vector3 GetRoomCentre()
     {
-        return new Vector3(X * Width, Y * Height);
+        return new Vector3( X * Width, Y * Height);
     }
 
-    void OnTriggerEnter2D(Collider2D other) //triggerした時, となりの部屋のtriggerを作動させた時
+    void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.tag == "Player")
+        if(other.tag == "Player")
         {
-            RoomController.instance.OnPlayerEnterRoom(this); //triggerが作動したthis=隣の部屋にOnPlayerEnterRoomする
+            RoomController.instance.OnPlayerEnterRoom(this);
         }
     }
 }

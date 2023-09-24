@@ -63,12 +63,13 @@ public class RoomController : MonoBehaviour
             {
                 StartCoroutine(SpawnBossRoom());
             }
-            else if(!spawnedBossRoom && updatedRooms)
+            else if(spawnedBossRoom && !updatedRooms)
             {
                 foreach(Room room in loadedRooms)
                 {
                     room.RemoveUnconnectedDoors();
                 }
+                UpdateRooms();
                 updatedRooms = true;
             }
             return;
@@ -87,11 +88,11 @@ public class RoomController : MonoBehaviour
         if(loadRoomQueue.Count == 0)
         {
             Room bossRoom = loadedRooms[loadedRooms.Count - 1];
-            Vector2Int tempRoom = new Vector2Int(bossRoom.X, bossRoom.Y);
+            Room tempRoom = new Room(bossRoom.X, bossRoom.Y);
             Destroy(bossRoom.gameObject);
-            var roomToRemove = loadedRooms.Single(r => r.X == tempRoom.x && r.Y == tempRoom.y);
+            var roomToRemove = loadedRooms.Single(r => r.X == tempRoom.X && r.Y == tempRoom.Y);
             loadedRooms.Remove(roomToRemove);
-            LoadRoom("End", tempRoom.x, tempRoom.y);
+            LoadRoom("End", tempRoom.X, tempRoom.Y);
         }
     }
 
@@ -163,9 +164,83 @@ public class RoomController : MonoBehaviour
         return loadedRooms.Find( item => item.X == x && item.Y == y);
     }
 
+    public string GetRandomRoomName() //部屋をランダムに選択する
+    {
+        string[] possibleRooms = new string[] {
+            "Empty",
+            "Basic1"
+        };
+
+        return possibleRooms[Random.Range(0, possibleRooms.Length)];
+    }
+
     public void OnPlayerEnterRoom(Room room)
     {
         CameraController.instance.currRoom = room;
         currRoom = room;
+
+        StartCoroutine(RoomCoroutine());
+    }
+
+
+    public IEnumerator RoomCoroutine()
+    {
+        yield return new WaitForSeconds(0.2f);
+        UpdateRooms();
+    }
+
+    public void UpdateRooms() //部屋更新
+    {
+        foreach(Room room in loadedRooms)
+        {
+            if(currRoom != room)
+            {
+                EnemyController[] enemies = room.GetComponentsInChildren<EnemyController>();
+                if(enemies != null)
+                { //非enemyの場合
+                    foreach(EnemyController enemy in enemies)
+                    {
+                        enemy.notInRoom = true;
+                        Debug.Log("Not in room");
+                    }
+
+                    foreach(Door door in room.GetComponentsInChildren<Door>())
+                    {
+                        door.doorCollider.SetActive(false); //ドアの当たり判定を無効化
+                    }
+                }
+                else
+                { //enemyの場合
+                    foreach(Door door in room.GetComponentsInChildren<Door>())
+                    {
+                        door.doorCollider.SetActive(false); //ドアの当たり判定を無効化
+                    }
+                }
+            }
+            else
+            {
+                EnemyController[] enemies = room.GetComponentsInChildren<EnemyController>();
+                if(enemies.Length > 0)
+                {
+                    foreach(EnemyController enemy in enemies)
+                    {
+                        enemy.notInRoom = false;
+                        Debug.Log("Not in room");
+                    }
+
+                    foreach(Door door in room.GetComponentsInChildren<Door>())
+                    {
+                        door.doorCollider.SetActive(true); //ドアの当たり判定を有効化
+                    }
+                }
+                else
+                {
+                    foreach(Door door in room.GetComponentsInChildren<Door>())
+                    {
+                        door.doorCollider.SetActive(false); //ドアの当たり判定を無効
+                    }
+                }
+            }
+        }
     }
 }
