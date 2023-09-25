@@ -43,6 +43,8 @@ public class Familiar : MonoBehaviour //Familiarの素体ステータスを定�
                 transform.position = Vector2.MoveTowards(transform.position, new Vector2(player.transform.position.x - lastOffsetX, player.transform.position.y - lastOffsetY), familiar.speed * Time.deltaTime);
             }
         }
+
+        familiar.speed = player.GetComponent<PlayerController>().speed * 0.7f;
     }
 
     void Shoot(float x, float y)
