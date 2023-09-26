@@ -48,7 +48,7 @@ public class Familiar : MonoBehaviour //Familiarの素体ステータスを定�
             }
         }
 
-        familiar.speed = player.GetComponent<PlayerController>().speed * 0.7f;
+        familiar.speed = player.GetComponent<PlayerController>().speed * 0.83f;
 
         if(currRoomChanged)
         {

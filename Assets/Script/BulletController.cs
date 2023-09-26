@@ -17,7 +17,6 @@ public class BulletController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Debug.Log(isFamiliarBullet);
         StartCoroutine(DeathDelay()); //コルーチン, エフェクトを遅延させる
         if (!isEnemyBullet && !isFamiliarBullet) //敵の弾ではない
         {
@@ -26,7 +25,6 @@ public class BulletController : MonoBehaviour
 
         if(isFamiliarBullet)
         {
-            Debug.Log("Fam");
             transform.localScale = new Vector2(GameController.BulletSize * 0.8f, GameController.BulletSize * 0.8f);
         }
     }

@@ -20,15 +20,20 @@ public class HeadAnimationController : MonoBehaviour
         float shootVert = Input.GetAxis("ShootVertical");
         if(shootHor > 0)
         {
-            scale.x = 1;
-            
+            if(scale.x < 0)
+            {
+                scale.x *= -1;
+            }
             animShoot.SetBool("FaceLeft", false);
             animShoot.SetBool("FaceBack", false);
             animShoot.SetBool("FaceRight", true);
         }
         else if(shootHor < 0)
         {
-            scale.x = -1;
+            if(scale.x > 0)
+            {
+                scale.x *= -1;
+            }
             animShoot.SetBool("FaceRight", false);
             animShoot.SetBool("FaceBack", false);
             animShoot.SetBool("FaceLeft", true);

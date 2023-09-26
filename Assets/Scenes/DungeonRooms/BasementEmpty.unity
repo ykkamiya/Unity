@@ -279,7 +279,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.17140579, y: 0.13711691}
+  m_Offset: {x: 0.19310236, y: 0.060906887}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -290,7 +290,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 18.756756, y: 9.912656}
+  m_Size: {x: 18.797974, y: 9.8361435}
   m_EdgeRadius: 0
 --- !u!114 &209749653
 MonoBehaviour:
@@ -407,7 +407,7 @@ PrefabInstance:
     - target: {fileID: 8555170533843869090, guid: 900617c10eb53d84db23ec3af378651b,
         type: 3}
       propertyPath: m_RootOrder
-      value: 11
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 8555170533843869090, guid: 900617c10eb53d84db23ec3af378651b,
         type: 3}
@@ -788,7 +788,7 @@ PrefabInstance:
     - target: {fileID: 6013512405108879628, guid: 40d0138d14415bb46a89634d94398c9b,
         type: 3}
       propertyPath: m_RootOrder
-      value: 10
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 6013512405108879628, guid: 40d0138d14415bb46a89634d94398c9b,
         type: 3}
@@ -945,6 +945,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1314021270}
   - component: {fileID: 1314021271}
+  - component: {fileID: 1314021272}
   m_Layer: 0
   m_Name: BottomDoor
   m_TagString: Untagged
@@ -981,6 +982,32 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   doorType: 3
   doorCollider: {fileID: 1112154896}
+--- !u!61 &1314021272
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1314021269}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.00000166893, y: -4.997563}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 3.6792493, y: 0.07751846}
+  m_EdgeRadius: 0
 --- !u!1 &1354260328
 GameObject:
   m_ObjectHideFlags: 0
@@ -991,6 +1018,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1354260329}
   - component: {fileID: 1354260330}
+  - component: {fileID: 1354260331}
   m_Layer: 0
   m_Name: LeftDoor
   m_TagString: Untagged
@@ -1027,6 +1055,32 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   doorType: 0
   doorCollider: {fileID: 495831462}
+--- !u!61 &1354260331
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1354260328}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -9.917446, y: 0.5823436}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.33, y: 10.8}
+    newSize: {x: 1.33, y: 10.8}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.06634903, y: 3.619481}
+  m_EdgeRadius: 0
 --- !u!1 &1374021707
 GameObject:
   m_ObjectHideFlags: 0
@@ -1037,6 +1091,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1374021708}
   - component: {fileID: 1374021709}
+  - component: {fileID: 1374021710}
+  - component: {fileID: 1374021711}
   m_Layer: 0
   m_Name: RightDoor
   m_TagString: Untagged
@@ -1073,6 +1129,58 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   doorType: 1
   doorCollider: {fileID: 1976932925}
+--- !u!61 &1374021710
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1374021707}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 10.179441, y: 0.8226266}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.3841629, y: 3.5553923}
+  m_EdgeRadius: 0
+--- !u!61 &1374021711
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1374021707}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 9.909996, y: 0.8392236}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.10428238, y: 3.5885863}
+  m_EdgeRadius: 0
 --- !u!1 &1454487485
 GameObject:
   m_ObjectHideFlags: 0
@@ -1174,7 +1282,7 @@ PrefabInstance:
     - target: {fileID: 2289006109654075315, guid: 5ed51384971750d4ba130ce0b7a78283,
         type: 3}
       propertyPath: m_RootOrder
-      value: 13
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 2289006109654075315, guid: 5ed51384971750d4ba130ce0b7a78283,
         type: 3}
@@ -1365,7 +1473,7 @@ PrefabInstance:
     - target: {fileID: 373817781654887996, guid: 77496ec5ef453a34cb154cf2d790538e,
         type: 3}
       propertyPath: m_RootOrder
-      value: 12
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 373817781654887996, guid: 77496ec5ef453a34cb154cf2d790538e,
         type: 3}
@@ -1451,6 +1559,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2120289448}
   - component: {fileID: 2120289449}
+  - component: {fileID: 2120289450}
   m_Layer: 0
   m_Name: TopDoor
   m_TagString: Untagged
@@ -1487,3 +1596,29 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   doorType: 2
   doorCollider: {fileID: 1821240588}
+--- !u!61 &2120289450
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2120289447}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.007959843, y: 6.868181}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 3.6587472, y: 0.096457005}
+  m_EdgeRadius: 0

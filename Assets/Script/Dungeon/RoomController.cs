@@ -48,6 +48,7 @@ public class RoomController : MonoBehaviour
     void Update()
     {
         UpdateRoomQueue();
+        Debug.Log("fuck");
     }
 
     void UpdateRoomQueue()
@@ -231,6 +232,7 @@ public class RoomController : MonoBehaviour
 
                     foreach(Door door in room.GetComponentsInChildren<Door>())
                     {
+                        //StartCoroutine(Shutdoors());
                         door.doorCollider.SetActive(true); //ドアの当たり判定を有効化
                     }
                 }
@@ -238,10 +240,15 @@ public class RoomController : MonoBehaviour
                 {
                     foreach(Door door in room.GetComponentsInChildren<Door>())
                     {
-                        door.doorCollider.SetActive(false); //ドアの当たり判定を無効
+                        door.doorCollider.SetActive(false); //ドアの当たり判定を無効化
                     }
                 }
             }
         }
+    }
+
+    IEnumerator Shutdoors()
+    {
+        yield return new WaitForSeconds(0.5f);
     }
 }

@@ -20,13 +20,19 @@ public class BodyWalk : MonoBehaviour
 
         if(horizontal < 0)
         {
-            scale.x = -1;
+            if(scale.x > 0)
+            {
+                scale.x *= -1;
+            }
             anim.SetBool("WalkFront", false);  
             anim.SetBool("WalkRight", true);
         }
         else if(horizontal > 0)
         {
-            scale.x = 1;
+            if(scale.x < 0)
+            {
+                scale.x *= -1;
+            }
             anim.SetBool("WalkFront", false);  
             anim.SetBool("WalkLeft", true);
         }

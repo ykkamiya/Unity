@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: BrotherBobbyFamiliar
   m_EditorClassIdentifier: 
   familiarType: BrotherBobby
-  speed: 2.5
+  speed: 3
   fireDelay: 2
   bulletPrefab: {fileID: 5142486768229504400, guid: 58f9319f9d9036942a32e5287dcf0d5c,
     type: 3}

@@ -34,15 +34,19 @@ public class EnemyController : MonoBehaviour
     public bool notInRoom = false; //アクティブルームかどうか
     private Vector3 randomDir;
     public GameObject bulletPrefab;
+
+    Animator anim = null;
     // Start is called before the first frame update
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player"); //見つけたPlayerをplayer変数に格納
+        anim = GetComponent<Animator>();
     }
 
     // Update is called once per frame
     void Update()
     {
+        //transform.rotation = 
         switch (currState)
         {
             case (EnemyState.Idle):
@@ -80,6 +84,7 @@ public class EnemyController : MonoBehaviour
         {
             currState = EnemyState.Idle;
         }
+
     }
 
     private bool IsPlayerInRange(float range)
@@ -92,8 +97,8 @@ public class EnemyController : MonoBehaviour
         chooseDir = true;
         yield return new WaitForSeconds(Random.Range(2f, 8f)); //yield return...ここで作業を中断し,一定時間メインの処理に戻す
         randomDir = new Vector3(0, 0, Random.Range(0, 360));
-        Quaternion nextRotation = Quaternion.Euler(randomDir); //Quaternion...unityでは回転を扱う際に用いる数
-        transform.rotation = Quaternion.Lerp(transform.rotation, nextRotation, Random.Range(0.5f, 2.5f));
+        //Quaternion nextRotation = Quaternion.Euler(randomDir); //Quaternion...unityでは回転を扱う際に用いる数
+        //transform.rotation = Quaternion.Lerp(transform.rotation, nextRotation, Random.Range(0.5f, 2.5f));
         chooseDir = false;
     }
     void Wander()
@@ -112,7 +117,26 @@ public class EnemyController : MonoBehaviour
 
     void Follow()
     {
+        Vector3 scale = transform.localScale;
+
+        float x1 = transform.position.x;
         transform.position = Vector2.MoveTowards(transform.position, player.transform.position, speed * Time.deltaTime);
+        float x2 = transform.position.x;
+        float movechangeX = x2 - x1; //x方向に変化した差分
+
+        if(movechangeX > 0)
+        {
+            scale.x *= -1f;
+        }
+        else
+        {
+            if(transform.localScale.x < 0)
+            {
+                scale.x *= -1f;
+            }
+        }
+
+        transform.localScale = scale;
     }
 
     void Attack()
@@ -145,6 +169,15 @@ public class EnemyController : MonoBehaviour
     public void Death()
     {
         RoomController.instance.StartCoroutine(RoomController.instance.RoomCoroutine());
+        StartCoroutine(DeathDelay());
+    }
+
+    IEnumerator DeathDelay()
+    {
+        anim.SetTrigger("Died");
+        anim.Update(0f);
+        var state = anim.GetCurrentAnimatorStateInfo(0);
+        yield return new WaitForSeconds(state.length);
         Destroy(gameObject);
     }
 }
