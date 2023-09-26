@@ -72,8 +72,9 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: af0eae3efebf96d47a8676267417a8e4, type: 3}
-  m_Color: {r: 0.9433962, g: 0.013349922, b: 0.013349922, a: 1}
+  m_Sprite: {fileID: -3974269958443032216, guid: b19f05048e834c747a45eb076df2b49f,
+    type: 3}
+  m_Color: {r: 0.73333335, g: 0.8117648, b: 0.9921569, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -96,6 +97,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lifeTime: 2
+  isEnemyBullet: 0
+  ExpirePrefab: {fileID: 5142486768229504400, guid: 61f6201b08a5fe344805215cd2c4e0a5,
+    type: 3}
 --- !u!61 &-7208667200477919513
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -113,7 +117,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 0.59375, y: 0.59375}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0

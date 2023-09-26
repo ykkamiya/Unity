@@ -12,10 +12,15 @@ public class PlayerController : MonoBehaviour
     public float bulletSpeed;
     private float lastFire;
     public float fireDelay;  
+
+    GameObject Head;
+    HeadAnimationController HeadAnim;
     // Start is called before the first frame update
     void Start()
     {
         rigidbody = GetComponent<Rigidbody2D>();
+        Head = transform.Find("Isaac_Head").gameObject;
+        HeadAnim = Head.GetComponent<HeadAnimationController>();
     }
 
     // Update is called once per frame
@@ -50,5 +55,6 @@ public class PlayerController : MonoBehaviour
             (y < 0) ? Mathf.Floor(y) * bulletSpeed : Mathf.Ceil(y) * bulletSpeed,
             0
         );
+        HeadAnim.animShoot.SetTrigger("Shooting");
     }
 }

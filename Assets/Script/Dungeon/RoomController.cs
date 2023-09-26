@@ -177,6 +177,7 @@ public class RoomController : MonoBehaviour
     public void OnPlayerEnterRoom(Room room)
     {
         CameraController.instance.currRoom = room;
+        GameObject.FindWithTag("Familiar").GetComponent<Familiar>().currRoomChanged = true;
         currRoom = room;
 
         StartCoroutine(RoomCoroutine());

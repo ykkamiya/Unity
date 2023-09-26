@@ -6,17 +6,28 @@ public class BulletController : MonoBehaviour
 {
     public float lifeTime;
     public bool isEnemyBullet = false; //敵の弾かのフラグ
+    public bool isFamiliarBullet = false;
 
     private Vector2 lastPos;
     private Vector2 curPos;
     private Vector2 playerPos;
+
+    public GameObject ExpirePrefab;
+
     // Start is called before the first frame update
     void Start()
     {
+        Debug.Log(isFamiliarBullet);
         StartCoroutine(DeathDelay()); //コルーチン, エフェクトを遅延させる
-        if (!isEnemyBullet) //敵の弾ではない
+        if (!isEnemyBullet && !isFamiliarBullet) //敵の弾ではない
         {
             transform.localScale = new Vector2(GameController.BulletSize, GameController.BulletSize);
+        }
+
+        if(isFamiliarBullet)
+        {
+            Debug.Log("Fam");
+            transform.localScale = new Vector2(GameController.BulletSize * 0.8f, GameController.BulletSize * 0.8f);
         }
     }
 
@@ -30,6 +41,7 @@ public class BulletController : MonoBehaviour
             transform.position = Vector2.MoveTowards(transform.position, playerPos, 5f * Time.deltaTime);
             if(curPos == lastPos)
             {
+                Instantiate(ExpirePrefab, transform.position, transform.rotation);
                 Destroy(gameObject);
             }
             lastPos = curPos;
@@ -44,20 +56,24 @@ public class BulletController : MonoBehaviour
     IEnumerator DeathDelay()
     {
         yield return new WaitForSeconds(lifeTime);
+        Instantiate(ExpirePrefab, transform.position, transform.rotation);
         Destroy(gameObject);
     }
+
 
     void OnTriggerEnter2D(Collider2D col)
     {
         if (col.tag == "Enemy" && !isEnemyBullet)
         {
             col.gameObject.GetComponent<EnemyController>().Death(); //getcomponent...unity editorにあるcomponentからデータを取得
+            Instantiate(ExpirePrefab, transform.position, transform.rotation);
             Destroy(gameObject);
         }
 
         if(col.tag == "Player" && isEnemyBullet)
         {
             GameController.DamagePlayer(1);
+            Instantiate(ExpirePrefab, transform.position, transform.rotation);
             Destroy(gameObject);
         }
     }

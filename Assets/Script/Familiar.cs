@@ -9,10 +9,14 @@ public class Familiar : MonoBehaviour //Familiarの素体ステータスを定�
     public FamiliarData familiar;
     private float lastOffsetX;
     private float lastOffsetY;
+    public bool currRoomChanged = false;
+
+    FamiliarAnimationController anim;
 
     private void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
+        anim = GetComponent<FamiliarAnimationController>();
     }
 
     void Update()
@@ -45,14 +49,22 @@ public class Familiar : MonoBehaviour //Familiarの素体ステータスを定�
         }
 
         familiar.speed = player.GetComponent<PlayerController>().speed * 0.7f;
+
+        if(currRoomChanged)
+        {
+            GetComponent<Transform>().position = player.GetComponent<Transform>().position; //プレイヤーの元にワープ
+            currRoomChanged = false;
+        }
     }
 
     void Shoot(float x, float y)
     {
         GameObject bullet = Instantiate(familiar.bulletPrefab, transform.position, Quaternion.identity) as GameObject; //弾オブジェクトを定義
-        float posX = (x < 0) ? Mathf.Floor(x) * familiar.speed : Mathf.Ceil(x) * familiar.speed;
-        float posY = (y < 0) ? Mathf.Floor(y) * familiar.speed : Mathf.Ceil(y) * familiar.speed;
+        float posX = (x < 0) ? Mathf.Floor(x) * familiar.speed : Mathf.Ceil(x) * familiar.speed * 1.5f;
+        float posY = (y < 0) ? Mathf.Floor(y) * familiar.speed : Mathf.Ceil(y) * familiar.speed * 1.5f;
         bullet.AddComponent<Rigidbody2D>().gravityScale = 0;
         bullet.GetComponent<Rigidbody2D>().velocity = new Vector2(posX, posY);
+        bullet.GetComponent<BulletController>().isFamiliarBullet = true;
+        anim.animShoot.SetTrigger("Shooting");
     }
 }
