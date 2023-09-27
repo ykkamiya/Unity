@@ -61,6 +61,14 @@ public class BulletController : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D col)
     {
+        if (col.name == "Duke Fly" && !isEnemyBullet)
+        {
+            col.gameObject.GetComponent<DukeflyController>().DealtDmg(1f);
+            Instantiate(ExpirePrefab, transform.position, transform.rotation);
+            Destroy(gameObject);
+            return;
+        }
+
         if (col.tag == "Enemy" && !isEnemyBullet)
         {
             col.gameObject.GetComponent<EnemyController>().Death(); //getcomponent...unity editorにあるcomponentからデータを取得

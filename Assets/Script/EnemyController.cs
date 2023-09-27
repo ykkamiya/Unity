@@ -128,7 +128,10 @@ public class EnemyController : MonoBehaviour
 
         if(movechangeX > 0)
         {
-            scale.x *= -1f;
+            if(transform.localScale.x > 0)
+            {
+                scale.x *= -1f;
+            }
         }
         else
         {
@@ -170,6 +173,11 @@ public class EnemyController : MonoBehaviour
     }
     public void Death()
     {
+        if(enemyType == EnemyType.Ranged)
+        {
+            Destroy(gameObject);
+            return;
+        }
         StartCoroutine(DeathDelay());
     }
 
