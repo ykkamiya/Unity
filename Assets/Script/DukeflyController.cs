@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class DukeflyController : MonoBehaviour
 {
@@ -31,6 +32,7 @@ public class DukeflyController : MonoBehaviour
     private bool coolDownAttack = false; //接触無敵時間
     private bool coolDownSummon = false; //召喚クールダウン
     private Vector3 summonPos;
+    private float Titletime = 0.5f;
     public bool notInRoom = true; //アクティブルームかどうか
 
     Animator anim = null;
@@ -54,7 +56,7 @@ public class DukeflyController : MonoBehaviour
             case (EnemyState.Idle):
                 break;
             case (EnemyState.Die):
-                Death();
+                StartCoroutine(Death());
                 break;
             case (EnemyState.Active):
                 Active();
@@ -101,7 +103,7 @@ public class DukeflyController : MonoBehaviour
 
         if (!coolDownSummon)
         {
-            anim.SetTrigger("isSummon");
+            StartCoroutine(SummonAnimDelay());
             Summonmob(enemies[randomNumber], SummonRange, summonNum);
             StartCoroutine(CoolDownSummon()); //遅延してCoolDown処理->無敵時間の実装
         }
@@ -136,21 +138,23 @@ public class DukeflyController : MonoBehaviour
     public void DealtDmg(float dmg)
     {
         health -= dmg;  
-        Debug.Log("dmg is: " + dmg + "hp is: " + health);
     }
 
-    public void Death()
-    {
-        StartCoroutine(DeathDelay());
-    }
-
-    IEnumerator DeathDelay()
+    IEnumerator Death()
     {
         anim.SetTrigger("isDeath");
         anim.Update(0f);
         var state = anim.GetCurrentAnimatorStateInfo(0);
         yield return new WaitForSeconds(state.length);
+        SceneManager.LoadScene("GameWin"); //シーン遷移
         Destroy(gameObject);
     }
 
+    IEnumerator SummonAnimDelay()
+    {
+        anim.SetTrigger("isSummon");
+        anim.Update(0f);
+        var state = anim.GetCurrentAnimatorStateInfo(0);
+        yield return new WaitForSeconds(state.length);
+    }
 }

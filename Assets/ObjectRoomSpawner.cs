@@ -29,7 +29,7 @@ public class ObjectRoomSpawner : MonoBehaviour
 
     void SpawnObjects(RandomSpawner data) //randomspawner構造体を与えるとそこからオブジェクトをスポーンさせる
     {
-        int randomIteration = Random.Range(data.SpawnerData.minSpawn, data.SpawnerData.maxSpawn) + 1; //+1
+        int randomIteration = Random.Range(data.SpawnerData.minSpawn, data.SpawnerData.maxSpawn + 1); //+1
 
         for(int i = 0; i < randomIteration; i++)
         {

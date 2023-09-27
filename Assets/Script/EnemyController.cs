@@ -128,14 +128,14 @@ public class EnemyController : MonoBehaviour
 
         if(movechangeX > 0)
         {
-            if(transform.localScale.x > 0)
+            if((transform.localScale.x > 0 && enemyType == EnemyType.Melee) || (transform.localScale.x < 0 && enemyType == EnemyType.Ranged))
             {
                 scale.x *= -1f;
             }
         }
         else
         {
-            if(transform.localScale.x < 0)
+            if((transform.localScale.x < 0 && enemyType == EnemyType.Melee) || (transform.localScale.x > 0 && enemyType == EnemyType.Ranged))
             {
                 scale.x *= -1f;
             }
@@ -155,6 +155,7 @@ public class EnemyController : MonoBehaviour
                     StartCoroutine(CoolDown()); //遅延してCoolDown処理->無敵時間の実装
                     break;
                 case (EnemyType.Ranged):
+                    anim.SetTrigger("isShoot");
                     GameObject bullet = Instantiate(bulletPrefab, transform.position, Quaternion.identity) as GameObject;
                     bullet.GetComponent<BulletController>().GetPlayer(player.transform);
                     bullet.AddComponent<Rigidbody2D>().gravityScale = 0;
@@ -173,17 +174,12 @@ public class EnemyController : MonoBehaviour
     }
     public void Death()
     {
-        if(enemyType == EnemyType.Ranged)
-        {
-            Destroy(gameObject);
-            return;
-        }
         StartCoroutine(DeathDelay());
     }
 
     IEnumerator DeathDelay()
     {
-        anim.SetTrigger("Died");
+        anim.SetTrigger("isDeath");
         anim.Update(0f);
         var state = anim.GetCurrentAnimatorStateInfo(0);
         yield return new WaitForSeconds(state.length);

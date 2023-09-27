@@ -178,10 +178,10 @@ MonoBehaviour:
   - {fileID: 5393209805596788050, guid: a71d1681193869f4ea708598ff8eb609, type: 3}
   speed: 0.8
   range: 10
-  health: 30
+  health: 50
   coolDown: 1
-  summonTime: 10
-  summonNum: 3
+  summonTime: 5
+  summonNum: 4
   SummonRange: 2
   notInRoom: 1
 --- !u!1 &8673653270119967354

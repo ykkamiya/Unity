@@ -36,10 +36,10 @@ public class Door : MonoBehaviour //Doorクラスの定義
                     player.transform.position = new Vector2(transform.position.x, transform.position.y - HeightOffset + 1.5f);
                     break;
                 case DoorType.left:
-                    player.transform.position = new Vector2(transform.position.x - widthOffset, transform.position.y);
+                    player.transform.position = new Vector2(transform.position.x - widthOffset, transform.position.y + 1.2f);
                     break;
                 case DoorType.right:
-                    player.transform.position = new Vector2(transform.position.x + widthOffset, transform.position.y);
+                    player.transform.position = new Vector2(transform.position.x + widthOffset, transform.position.y + 1.2f);
                     break;
                 case DoorType.top:
                     player.transform.position = new Vector2(transform.position.x, transform.position.y + HeightOffset + 0.9f);

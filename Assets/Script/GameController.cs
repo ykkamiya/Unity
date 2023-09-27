@@ -10,8 +10,9 @@ public class GameController : MonoBehaviour
     //外部から参照できない、このスクリプトのみで用いる変数
     private static float health = 6;
     private static int maxHealth = 6;
-    private static float moveSpeed = 3f;
+    private static float moveSpeed = 3.25f;
     private static float fireRate = 0.5f;
+    private float maxfireRate = 0.1f; //上限
     private static float bulletSize = 0.8f;
 
     private bool bootCollected = false;
@@ -93,6 +94,11 @@ public class GameController : MonoBehaviour
         if(bootCollected && screwCollected) //シナジー発生
         {
             FireRateChange(0.0625f);
+        }
+
+        if(fireRate < maxfireRate)
+        {
+            fireRate = maxfireRate; //上限
         }
     }
 

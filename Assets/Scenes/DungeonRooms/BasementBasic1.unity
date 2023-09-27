@@ -143,7 +143,7 @@ MonoBehaviour:
   spawnerData:
   - name: Redfly
     SpawnerData: {fileID: 11400000, guid: fdd14dc2f139fc748ac7f35968969c94, type: 2}
-  - name: Items
+  - name: Random Item
     SpawnerData: {fileID: 11400000, guid: a7d02c994bcf0cc4f85d910068f3d7f6, type: 2}
 --- !u!114 &1069238278 stripped
 MonoBehaviour:
@@ -289,6 +289,6 @@ PrefabInstance:
       objectReference: {fileID: 11400000, guid: a7d02c994bcf0cc4f85d910068f3d7f6,
         type: 2}
     m_RemovedComponents:
-    - {fileID: 5916185648291587729, guid: 6e73efe2e28664c41a603392e4bd67df, type: 3}
+    - {fileID: 0}
     - {fileID: 2544651238015759790, guid: 6e73efe2e28664c41a603392e4bd67df, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 6e73efe2e28664c41a603392e4bd67df, type: 3}

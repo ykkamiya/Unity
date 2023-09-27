@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 5393209805596788063}
   - component: {fileID: 314496523962112800}
   - component: {fileID: 5393209805596788049}
+  - component: {fileID: 973595611}
   m_Layer: 11
   m_Name: Pooter
   m_TagString: Enemy
@@ -97,7 +98,7 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 4093445684260695818, guid: 41302a02624025945a94a1d2af7af5d9,
     type: 3}
-  m_Color: {r: 0.3679245, g: 0.23082057, b: 0.23082057, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -181,3 +182,22 @@ MonoBehaviour:
   notInRoom: 0
   bulletPrefab: {fileID: 5142486768229504400, guid: 0f74c32312dd32041bd07d906bc6403e,
     type: 3}
+--- !u!95 &973595611
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5393209805596788050}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: d3118bd22c852664caf6b344f8891b1e, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
