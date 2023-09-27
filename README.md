@@ -4,5 +4,6 @@
 講座リポジトリ:https://github.com/chillehh/Binding-of-Isaac-Tutorial
 
 # ToDo(until 9/28)
-- [ ] テクスチャを付ける
-- [ ] ボスを作る
+- [x] テクスチャを付ける
+- [ ] 壁に判定を付ける
+- [ ] ボスを作る(出来たらいいね)
