@@ -15,10 +15,10 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
-  - 
-  - 
+  - PlayerWallUnblocking
+  - PlayerWallBlocking
+  - Player
+  - Enemy
   - 
   - 
   - 

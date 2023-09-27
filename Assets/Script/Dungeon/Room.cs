@@ -25,6 +25,14 @@ public class Room : MonoBehaviour
 
     public List<Door> doors = new List<Door>();
 
+    public GameObject leftTemporalCollider; //これらはインスペクターから設定する
+    public GameObject rightTemporalCollider;
+    public GameObject topTemporalCollider;
+    public GameObject bottomTemporalCollider;
+    //layer 8:playerwallunblocking, layer 9:playerwallblocking
+    const int PlayerWallUnblocking = 8;
+    const int PlayerWallBlocking = 9;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -76,19 +84,31 @@ public class Room : MonoBehaviour
             {
                 case Door.DoorType.right:
                     if(GetRight() == null)
+                    {
                         door.gameObject.SetActive(false);
+                        rightTemporalCollider.layer = PlayerWallBlocking;
+                    }
                 break;
                 case Door.DoorType.left:
                     if(GetLeft() == null)
+                    {
                         door.gameObject.SetActive(false);
+                        leftTemporalCollider.layer = PlayerWallBlocking;
+                    }
                 break;
                 case Door.DoorType.top:
                     if(GetTop() == null)
+                    {
                         door.gameObject.SetActive(false);
+                        topTemporalCollider.layer = PlayerWallBlocking;
+                    }
                 break;
                 case Door.DoorType.bottom:
-                if(GetBottom() == null)
+                    if(GetBottom() == null)
+                    {
                         door.gameObject.SetActive(false);
+                        bottomTemporalCollider.layer = PlayerWallBlocking;
+                    }
                 break;
             }
         }
