@@ -220,7 +220,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &209749650
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -710,6 +710,42 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &948984124 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2388011130871021027, guid: 6e73efe2e28664c41a603392e4bd67df,
+    type: 3}
+  m_PrefabInstance: {fileID: 1576284898}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &948984128
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 948984124}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4b1120f101089a4180bbbea9c1a36db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  grid: {fileID: 1069238278}
+  spawnerData:
+  - name: Redfly
+    SpawnerData: {fileID: 11400000, guid: fdd14dc2f139fc748ac7f35968969c94, type: 2}
+  - name: Items
+    SpawnerData: {fileID: 11400000, guid: a7d02c994bcf0cc4f85d910068f3d7f6, type: 2}
+--- !u!114 &1069238278 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2388011130337372741, guid: 6e73efe2e28664c41a603392e4bd67df,
+    type: 3}
+  m_PrefabInstance: {fileID: 1576284898}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 067fe64384f203542aa3ae9d07423947, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1118345830
 GameObject:
   m_ObjectHideFlags: 0
@@ -1109,6 +1145,141 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 8555170532650572996}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1576284898
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2388011130871021025, guid: 6e73efe2e28664c41a603392e4bd67df,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2388011130871021025, guid: 6e73efe2e28664c41a603392e4bd67df,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2388011130871021025, guid: 6e73efe2e28664c41a603392e4bd67df,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2388011130871021025, guid: 6e73efe2e28664c41a603392e4bd67df,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2388011130871021025, guid: 6e73efe2e28664c41a603392e4bd67df,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2388011130871021025, guid: 6e73efe2e28664c41a603392e4bd67df,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2388011130871021025, guid: 6e73efe2e28664c41a603392e4bd67df,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2388011130871021025, guid: 6e73efe2e28664c41a603392e4bd67df,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2388011130871021025, guid: 6e73efe2e28664c41a603392e4bd67df,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2388011130871021025, guid: 6e73efe2e28664c41a603392e4bd67df,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2388011130871021025, guid: 6e73efe2e28664c41a603392e4bd67df,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2388011130871021027, guid: 6e73efe2e28664c41a603392e4bd67df,
+        type: 3}
+      propertyPath: m_Name
+      value: Room (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2388011130871021027, guid: 6e73efe2e28664c41a603392e4bd67df,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2388011130871021031, guid: 6e73efe2e28664c41a603392e4bd67df,
+        type: 3}
+      propertyPath: grid
+      value: 
+      objectReference: {fileID: 1069238278}
+    - target: {fileID: 2388011130871021031, guid: 6e73efe2e28664c41a603392e4bd67df,
+        type: 3}
+      propertyPath: spawnerData.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2388011130871021031, guid: 6e73efe2e28664c41a603392e4bd67df,
+        type: 3}
+      propertyPath: spawnerData.Array.data[0].name
+      value: Charging Fly
+      objectReference: {fileID: 0}
+    - target: {fileID: 2388011130871021031, guid: 6e73efe2e28664c41a603392e4bd67df,
+        type: 3}
+      propertyPath: spawnerData.Array.data[1].name
+      value: Items
+      objectReference: {fileID: 0}
+    - target: {fileID: 2388011130871021031, guid: 6e73efe2e28664c41a603392e4bd67df,
+        type: 3}
+      propertyPath: spawnerData.Array.data[0].SpawnerData
+      value: 
+      objectReference: {fileID: 11400000, guid: fdd14dc2f139fc748ac7f35968969c94,
+        type: 2}
+    - target: {fileID: 2388011130871021031, guid: 6e73efe2e28664c41a603392e4bd67df,
+        type: 3}
+      propertyPath: spawnerData.Array.data[1].SpawnerData
+      value: 
+      objectReference: {fileID: 11400000, guid: a7d02c994bcf0cc4f85d910068f3d7f6,
+        type: 2}
+    - target: {fileID: 5916185648291587729, guid: 6e73efe2e28664c41a603392e4bd67df,
+        type: 3}
+      propertyPath: spawnerData.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5916185648291587729, guid: 6e73efe2e28664c41a603392e4bd67df,
+        type: 3}
+      propertyPath: spawnerData.Array.data[0].name
+      value: Redfly
+      objectReference: {fileID: 0}
+    - target: {fileID: 5916185648291587729, guid: 6e73efe2e28664c41a603392e4bd67df,
+        type: 3}
+      propertyPath: spawnerData.Array.data[1].name
+      value: Items
+      objectReference: {fileID: 0}
+    - target: {fileID: 5916185648291587729, guid: 6e73efe2e28664c41a603392e4bd67df,
+        type: 3}
+      propertyPath: spawnerData.Array.data[0].SpawnerData
+      value: 
+      objectReference: {fileID: 11400000, guid: fdd14dc2f139fc748ac7f35968969c94,
+        type: 2}
+    - target: {fileID: 5916185648291587729, guid: 6e73efe2e28664c41a603392e4bd67df,
+        type: 3}
+      propertyPath: spawnerData.Array.data[1].SpawnerData
+      value: 
+      objectReference: {fileID: 11400000, guid: a7d02c994bcf0cc4f85d910068f3d7f6,
+        type: 2}
+    m_RemovedComponents:
+    - {fileID: 5916185648291587729, guid: 6e73efe2e28664c41a603392e4bd67df, type: 3}
+    - {fileID: 2544651238015759790, guid: 6e73efe2e28664c41a603392e4bd67df, type: 3}
+  m_SourcePrefab: {fileID: 100100000, guid: 6e73efe2e28664c41a603392e4bd67df, type: 3}
 --- !u!1 &1834068807
 GameObject:
   m_ObjectHideFlags: 0

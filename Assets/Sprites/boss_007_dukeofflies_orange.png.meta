@@ -1,12 +1,54 @@
 fileFormatVersion: 2
 guid: ab8de2bae79482842830d4065ddfee7c
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: 8492491991884433887
+    second: boss_007_dukeofflies_orange_0
+  - first:
+      213: 7841802643982407055
+    second: boss_007_dukeofflies_orange_1
+  - first:
+      213: -6569709302938599304
+    second: boss_007_dukeofflies_orange_2
+  - first:
+      213: -2200262464519280058
+    second: boss_007_dukeofflies_orange_3
+  - first:
+      213: -2152334349151729482
+    second: boss_007_dukeofflies_orange_4
+  - first:
+      213: 7001350090311631036
+    second: boss_007_dukeofflies_orange_5
+  - first:
+      213: -108935402621267044
+    second: boss_007_dukeofflies_orange_6
+  - first:
+      213: -6084028792218467659
+    second: boss_007_dukeofflies_orange_7
+  - first:
+      213: -7182969812996178158
+    second: boss_007_dukeofflies_orange_8
+  - first:
+      213: 9117753005537796095
+    second: boss_007_dukeofflies_orange_9
+  - first:
+      213: 5211654244662612244
+    second: boss_007_dukeofflies_orange_10
+  - first:
+      213: -155187127396622640
+    second: boss_007_dukeofflies_orange_11
+  - first:
+      213: 5646994777371793923
+    second: boss_007_dukeofflies_orange_12
+  - first:
+      213: -5179137917284709350
+    second: boss_007_dukeofflies_orange_13
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
     mipMapMode: 0
-    enableMipMap: 1
+    enableMipMap: 0
     sRGBTexture: 1
     linearTexture: 0
     fadeOut: 0
@@ -34,24 +76,24 @@ TextureImporter:
     filterMode: 1
     aniso: 1
     mipBias: 0
-    wrapU: 0
-    wrapV: 0
+    wrapU: 1
+    wrapV: 1
     wrapW: 0
-  nPOTScale: 1
+  nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 0
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 16
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
-  alphaIsTransparency: 0
+  alphaIsTransparency: 1
   spriteTessellationDetail: -1
-  textureType: 0
+  textureType: 8
   textureShape: 1
   singleChannelComponent: 0
   maxTextureSizeSet: 0
@@ -71,13 +113,319 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: boss_007_dukeofflies_orange_0
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 134
+        width: 67
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fd90f12b8746bd570800000000000000
+      internalID: 8492491991884433887
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boss_007_dukeofflies_orange_1
+      rect:
+        serializedVersion: 2
+        x: 90
+        y: 133
+        width: 61
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f855a4105fda3dc60800000000000000
+      internalID: 7841802643982407055
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boss_007_dukeofflies_orange_2
+      rect:
+        serializedVersion: 2
+        x: 174
+        y: 136
+        width: 51
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 87004c06234b3d4a0800000000000000
+      internalID: -6569709302938599304
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boss_007_dukeofflies_orange_3
+      rect:
+        serializedVersion: 2
+        x: 252
+        y: 138
+        width: 55
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 64ae3bd22f81771e0800000000000000
+      internalID: -2200262464519280058
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boss_007_dukeofflies_orange_4
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 70
+        width: 57
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6b880f0205f5122e0800000000000000
+      internalID: -2152334349151729482
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boss_007_dukeofflies_orange_5
+      rect:
+        serializedVersion: 2
+        x: 87
+        y: 70
+        width: 66
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cb08c29ffcac92160800000000000000
+      internalID: 7001350090311631036
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boss_007_dukeofflies_orange_6
+      rect:
+        serializedVersion: 2
+        x: 174
+        y: 76
+        width: 53
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c939b4714dbfc7ef0800000000000000
+      internalID: -108935402621267044
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boss_007_dukeofflies_orange_7
+      rect:
+        serializedVersion: 2
+        x: 249
+        y: 75
+        width: 62
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5b2c19c4c00319ba0800000000000000
+      internalID: -6084028792218467659
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boss_007_dukeofflies_orange_8
+      rect:
+        serializedVersion: 2
+        x: 186
+        y: 19
+        width: 33
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 21f32081307f05c90800000000000000
+      internalID: -7182969812996178158
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boss_007_dukeofflies_orange_9
+      rect:
+        serializedVersion: 2
+        x: 205
+        y: 25
+        width: 14
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fff94d4fc04c88e70800000000000000
+      internalID: 9117753005537796095
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boss_007_dukeofflies_orange_10
+      rect:
+        serializedVersion: 2
+        x: 271
+        y: 45
+        width: 9
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 41195494ce3835840800000000000000
+      internalID: 5211654244662612244
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boss_007_dukeofflies_orange_11
+      rect:
+        serializedVersion: 2
+        x: 271
+        y: 45
+        width: 9
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0de9fcd312aa8ddf0800000000000000
+      internalID: -155187127396622640
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boss_007_dukeofflies_orange_12
+      rect:
+        serializedVersion: 2
+        x: 264
+        y: 19
+        width: 36
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 30a5bb9b4d72e5e40800000000000000
+      internalID: 5646994777371793923
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boss_007_dukeofflies_orange_13
+      rect:
+        serializedVersion: 2
+        x: 284
+        y: 25
+        width: 16
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a1c0d7521810028b0800000000000000
+      internalID: -5179137917284709350
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 

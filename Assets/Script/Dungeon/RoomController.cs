@@ -48,7 +48,6 @@ public class RoomController : MonoBehaviour
     void Update()
     {
         UpdateRoomQueue();
-        Debug.Log("fuck");
     }
 
     void UpdateRoomQueue()
