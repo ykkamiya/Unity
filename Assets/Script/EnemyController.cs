@@ -34,6 +34,7 @@ public class EnemyController : MonoBehaviour
     public bool notInRoom = false; //アクティブルームかどうか
     private Vector3 randomDir;
     public GameObject bulletPrefab;
+    GameObject rootObj;
 
     Animator anim = null;
     // Start is called before the first frame update
@@ -41,6 +42,7 @@ public class EnemyController : MonoBehaviour
     {
         player = GameObject.FindGameObjectWithTag("Player"); //見つけたPlayerをplayer変数に格納
         anim = GetComponent<Animator>();
+        rootObj = transform.root.gameObject;
     }
 
     // Update is called once per frame
@@ -168,7 +170,6 @@ public class EnemyController : MonoBehaviour
     }
     public void Death()
     {
-        RoomController.instance.StartCoroutine(RoomController.instance.RoomCoroutine());
         StartCoroutine(DeathDelay());
     }
 
@@ -178,6 +179,7 @@ public class EnemyController : MonoBehaviour
         anim.Update(0f);
         var state = anim.GetCurrentAnimatorStateInfo(0);
         yield return new WaitForSeconds(state.length);
+        RoomController.instance.StartCoroutine(RoomController.instance.RoomCoroutine()); //ここで部屋の更新処理を呼び出す
         Destroy(gameObject);
     }
 }

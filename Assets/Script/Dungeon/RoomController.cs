@@ -57,7 +57,7 @@ public class RoomController : MonoBehaviour
             return;
         }
 
-        if(loadRoomQueue.Count == 0) //生成待ちのマップは無い？
+        if(loadRoomQueue.Count == 0) //生成待ちのマップは無い？, 基本的に常にここを読み込んでるっぽい？
         {
             if(!spawnedBossRoom)
             {
@@ -231,7 +231,6 @@ public class RoomController : MonoBehaviour
 
                     foreach(Door door in room.GetComponentsInChildren<Door>())
                     {
-                        //StartCoroutine(Shutdoors());
                         door.doorCollider.SetActive(true); //ドアの当たり判定を有効化
                     }
                 }
@@ -239,15 +238,10 @@ public class RoomController : MonoBehaviour
                 {
                     foreach(Door door in room.GetComponentsInChildren<Door>())
                     {
-                        door.doorCollider.SetActive(false); //ドアの当たり判定を無効化
+                        door.doorCollider.SetActive(false); //ドアの当たり判定を無効化, 敵が全滅した時ここが発動する
                     }
                 }
             }
         }
-    }
-
-    IEnumerator Shutdoors()
-    {
-        yield return new WaitForSeconds(0.5f);
     }
 }
